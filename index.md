@@ -1,37 +1,41 @@
-## Welcome to GitHub Pages
+## Welcome to SlackWiki
 
-You can use the [editor on GitHub](https://github.com/lfontesc/slackwiki/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+Teste Post 1: Configurando 2 monitores no SlackWare
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### Iniciando....
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+Use o comando xrandr para listar os dispositivos de videos conectados.
 
 ```markdown
-Syntax highlighted code block
+A saida do comando deve ser algo como essa.
 
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+Screen 0: minimum 8 x 8, current 1366 x 768, maximum 32767 x 32767
+eDP1 connected primary 1366x768+0+0 (normal left inverted right x axis y axis) 340mm x 190mm
+   1366x768      60.00*+  48.01  
+   1280x720      59.86    60.00    59.74  
+HDMI1 connected (normal left inverted right x axis y axis)
+   1280x1024     60.02 +  75.02  
+   1920x1080     60.00    59.94  
+   1152x864      75.00  
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+No meu caso o meu monitor principal está com o nome de "eDP1", e o meu monitor está listado como HDMI1.
 
-### Jekyll Themes
+### Escolhendo as configurações
+Sintaxe do comando
+>xrandr --output <NOME_MONITOR_SECUNDARIO> --auto <LEFT ou RIGHT>-of <NOME_MONITOR_PRIMARIO>.
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/lfontesc/slackwiki/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+Para manter o monitor secundario a esquerda utilize
+```bash
+xrandr --output HDMI1 --auto --left-of eDP1
+}
+```
+Para manter o monitor secundario a direita utilize
+```bash
+xrandr --output HDMI1 --auto --right-of eDP1
+}
+```
 
 ### Support or Contact
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+Estou somente testando pra ver como funciona isso.
