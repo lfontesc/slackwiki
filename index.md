@@ -23,8 +23,9 @@ No meu caso o monitor principal está com o nome de "eDP1", e o meu monitor secu
 
 ### Escolhendo as configurações
 Sintaxe do comando
->xrandr ---output "NOME_MONITOR_SECUNDARIO" ---auto "LEFT ou RIGHT"--of "NOME_MONITOR_PRIMARIO".
-
+```bash
+xrandr --output "NOME_MONITOR_SECUNDARIO" --auto "LEFT ou RIGHT"-of "NOME_MONITOR_PRIMARIO".
+```
 Para manter o monitor secundario a esquerda utilize
 ```bash
 xrandr --output HDMI1 --auto --left-of eDP1
